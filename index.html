@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Time Conversion</h1>
+    <script>
+        function print24(str) {
+
+                // Get hours
+
+                let h1 = Number(str[1] - '0');
+
+                let h2 = Number(str[0] - '0');
+
+                let hh = (h2 * 10 + h1 % 10);
+
+
+
+                // If time is in "AM"
+
+                if (str[8] == 'A') {
+
+                    if (hh == 12) {
+
+                        document.write("00");
+
+                        for (let i = 2; i <= 7; i++)
+
+                            document.write(str[i]);
+
+                    }
+
+                    else {
+
+                        for (let i = 0; i <= 7; i++)
+
+                            document.write(str[i]);
+
+                    }
+
+                }
+
+
+
+                // If time is in "PM"
+
+                else {
+
+                    if (hh == 12) {
+
+                        document.write("12");
+
+                        for (let i = 2; i <= 7; i++)
+
+                            document.write(str[i]);
+
+                    }
+
+                    else {
+
+                        hh = hh + 12;
+
+                        document.write(hh);
+
+                        for (let i = 2; i <= 7; i++)
+
+                            document.write(str[i]);
+
+                    }
+
+                }
+            }
+
+
+            console.log(print24('07:05:45PM'));
+    </script>
+</body>
+</html>
